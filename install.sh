@@ -40,13 +40,12 @@ fi
 # ------------------------------------------------------------------------------
 # 설정 파일 연결
 # ------------------------------------------------------------------------------
-echo "==> 설정 파일 복사 중..."
+echo "==> 설정 파일 심볼릭 링크 연결 중..."
 
-cp "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
-cp "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 
 mkdir -p "$HOME/.config/ghostty"
-cp "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+ln -sf "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
 
 # ------------------------------------------------------------------------------
 # 완료
